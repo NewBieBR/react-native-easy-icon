@@ -1,0 +1,31 @@
+{
+  "name": "react-native-easy-icon",
+  "version": "1.0.2",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-package": "rm -f *.tgz && npm pack && cd examples && yarn cache clean && yarn remove react-native-easy-icon && yarn add ../react-native-easy-icon-*.tgz"
+  },
+  "keywords": [
+    "React Native",
+    "React",
+    "Typescript",
+    "react-native",
+    "react"
+  ],
+  "author": "Hung Arthur Dao",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewBieBR/react-native-easy-icon.git"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.19",
+    "@types/react-native": "^0.61.10",
+    "react-native-vector-icons": "^6.6.0"
+  },
+  "peerDependencies": {
+    "react-native-vector-icons": ">6.0.0"
+  }
+}
