@@ -6,6 +6,8 @@ export type IconType =
   | 'material'
   | 'material-community'
   | 'font-awesome'
+  | 'font-awesome5'
+  | 'font-awesome-brands'
   | 'octicon'
   | 'ionicon'
   | 'foundation'
@@ -14,7 +16,8 @@ export type IconType =
   | 'zocial'
   | 'entypo'
   | 'feather'
-  | 'antdesign';
+  | 'antdesign'
+  | 'fontisto';
 
 export interface IconProps {
   type: IconType;

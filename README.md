@@ -29,6 +29,8 @@ import Icon from 'react-native-easy-icon';
 - material
 - material-community
 - font-awesome
+- font-awesome5
+- font-awesome-brands
 - octicon
 - ionicon
 - foundation
@@ -38,6 +40,7 @@ import Icon from 'react-native-easy-icon';
 - entypo
 - feather
 - antdesign
+- fontisto
 
 
 #### [Icons list](https://oblador.github.io/react-native-vector-icons/)
