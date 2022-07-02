@@ -13,11 +13,12 @@ import SimpleLineIcon from "react-native-vector-icons/SimpleLineIcons";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import AntIcon from "react-native-vector-icons/AntDesign";
 import FontistoIcon from "react-native-vector-icons/Fontisto";
-import Icon, { IconType } from "react-native-easy-icon/src/Icon";
+import { IconType } from "react-native-easy-icon/src/Icon";
+import { Icon } from "react-native-vector-icons/Icon";
 
 const customIcons: Record<string, Icon> = {};
 
-export const registerCustomIconType = (id: string, customIcon: Icon) => {
+export const registerCustomIconType = (id: string, customIcon: typeof Icon) => {
   customIcons[id] = customIcon;
 };
 
