@@ -16,7 +16,7 @@ import FontistoIcon from "react-native-vector-icons/Fontisto";
 import { IconType } from "react-native-easy-icon/src/Icon";
 import { Icon } from "react-native-vector-icons/Icon";
 
-const customIcons: Record<string, Icon> = {};
+const customIcons: Record<string, typeof Icon> = {};
 
 export const registerCustomIconType = (id: string, customIcon: typeof Icon) => {
   customIcons[id] = customIcon;
