@@ -1,23 +1,23 @@
-import * as React from 'react';
-import { TextProps } from 'react-native';
-import getIconType from './getIconType';
+import * as React from "react";
+import { TextProps } from "react-native";
+import getIconType from "./getIconType";
 
 export type IconType =
-  | 'material'
-  | 'material-community'
-  | 'font-awesome'
-  | 'font-awesome5'
-  | 'font-awesome-brands'
-  | 'octicon'
-  | 'ionicon'
-  | 'foundation'
-  | 'evilicon'
-  | 'simple-line-icon'
-  | 'zocial'
-  | 'entypo'
-  | 'feather'
-  | 'antdesign'
-  | 'fontisto';
+  | "material"
+  | "material-community"
+  | "font-awesome"
+  | "font-awesome5"
+  | "font-awesome-brands"
+  | "octicon"
+  | "ionicon"
+  | "foundation"
+  | "evilicon"
+  | "simple-line-icon"
+  | "zocial"
+  | "entypo"
+  | "feather"
+  | "antdesign"
+  | "fontisto";
 
 export interface IconProps {
   type: IconType;

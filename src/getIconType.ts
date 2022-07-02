@@ -1,56 +1,57 @@
-import ZocialIcon from 'react-native-vector-icons/Zocial';
-import OcticonIcon from 'react-native-vector-icons/Octicons';
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicon from 'react-native-vector-icons/Ionicons';
-import FoundationIcon from 'react-native-vector-icons/Foundation';
-import EvilIcon from 'react-native-vector-icons/EvilIcons';
-import EntypoIcon from 'react-native-vector-icons/Entypo';
-import FAIcon from 'react-native-vector-icons/FontAwesome';
-import FA5Icon from 'react-native-vector-icons/FontAwesome5';
-import FA5Brands from 'react-native-vector-icons/FontAwesome5Pro';
-import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
-import FeatherIcon from 'react-native-vector-icons/Feather';
-import AntIcon from 'react-native-vector-icons/AntDesign';
-import FontistoIcon from 'react-native-vector-icons/Fontisto';
+import ZocialIcon from "react-native-vector-icons/Zocial";
+import OcticonIcon from "react-native-vector-icons/Octicons";
+import MaterialIcon from "react-native-vector-icons/MaterialIcons";
+import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import Ionicon from "react-native-vector-icons/Ionicons";
+import FoundationIcon from "react-native-vector-icons/Foundation";
+import EvilIcon from "react-native-vector-icons/EvilIcons";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import FAIcon from "react-native-vector-icons/FontAwesome";
+import FA5Icon from "react-native-vector-icons/FontAwesome5";
+import FA5Brands from "react-native-vector-icons/FontAwesome5Pro";
+import SimpleLineIcon from "react-native-vector-icons/SimpleLineIcons";
+import FeatherIcon from "react-native-vector-icons/Feather";
+import AntIcon from "react-native-vector-icons/AntDesign";
+import FontistoIcon from "react-native-vector-icons/Fontisto";
+import Icon, { IconType } from "react-native-easy-icon/src/Icon";
 
-const customIcons = {};
+const customIcons: Record<string, Icon> = {};
 
-export const registerCustomIconType = (id, customIcon) => {
+export const registerCustomIconType = (id: string, customIcon: Icon) => {
   customIcons[id] = customIcon;
 };
 
-export default type => {
+export default (type: IconType) => {
   switch (type) {
-    case 'zocial':
+    case "zocial":
       return ZocialIcon;
-    case 'octicon':
+    case "octicon":
       return OcticonIcon;
-    case 'material':
+    case "material":
       return MaterialIcon;
-    case 'material-community':
+    case "material-community":
       return MaterialCommunityIcon;
-    case 'ionicon':
+    case "ionicon":
       return Ionicon;
-    case 'foundation':
+    case "foundation":
       return FoundationIcon;
-    case 'evilicon':
+    case "evilicon":
       return EvilIcon;
-    case 'entypo':
+    case "entypo":
       return EntypoIcon;
-    case 'font-awesome':
+    case "font-awesome":
       return FAIcon;
-    case 'font-awesome5':
+    case "font-awesome5":
       return FA5Icon;
-    case 'font-awesome-brands':
+    case "font-awesome-brands":
       return FA5Brands;
-    case 'simple-line-icon':
+    case "simple-line-icon":
       return SimpleLineIcon;
-    case 'feather':
+    case "feather":
       return FeatherIcon;
-    case 'antdesign':
+    case "antdesign":
       return AntIcon;
-    case 'fontisto':
+    case "fontisto":
       return FontistoIcon;
     default:
       if (Object.prototype.hasOwnProperty.call(customIcons, type)) {
