@@ -1,51 +1,60 @@
-# React Native Easy Icon
+# Typed React Native Vector Icons
 
-A wrapper component using [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons). Support Typescript.
+Fully typed Icon component for react-native-vector-icons.
 
-## Installation
+![](./assets/demo.gif)
+
+
+## Getting Started
+
+1. Install react-native-vector-icons
+
+2. Install this package
 ```bash
 yarn add react-native-easy-icon
 ```
-*OR*
+
+## What if react-native-vector-icons add new icon sets or icons?
+Follow these steps:
 ```bash
-npm install --save react-native-easy-icon
+# 1. Install dependencies
+yarn add react-native-easy-icon
+
+# 2. Add new icon set to index.tsx > IconSets array
+
+# 3. Generate a typed Icon component by parsing react-native-vector-icons package.
+yarn generate
+
+# 4. Build
+yarn build
 ```
 
-**If you don't have react-native-vector-icons**
-[Install react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation)
 
-> If you created your project with expo, crna or trnc, react-native-vector-icons is installed by default
+## How does it works?
 
-
-## Usage
-
-```javascript
-import Icon from 'react-native-easy-icon';
-
-<Icon  type="feather" name="award" color="coral" size={21}/>
-```
-
-#### Icon Type:
-- material
-- material-community
-- font-awesome
-- font-awesome5
-- font-awesome-brands
-- octicon
-- ionicon
-- foundation
-- evilicon
-- simple-line-icon
-- zocial
-- entypo
-- feather
-- antdesign
-- fontisto
-
-
-#### [Icons list](https://oblador.github.io/react-native-vector-icons/)
-
-
-## Note
-
-Icon types list is extracted from react-native-elements
+The generation script:
+1. For each icon set (AntDesign, Zocial, Entypo, etc), find the glyph map file by reading each `./node_modules/react-native-vector-icons/${iconSetName}.js`
+    - Example from Feather.js:
+    ```javascript
+    import createIconSet from './lib/create-icon-set';
+    import glyphMap from './glyphmaps/Feather.json'; // the script gets this path.
+    // ...
+    ```
+    - We cannot assume that the glyph map file path is `.../glyphmaps/${iconSetName}.json` because FontAwesome5 is an exception.
+2. Get list of icon names of each icon set by parsing glyph map files.
+    - Example from glyphmaps/Feather.json:
+    ```json
+    {
+        "activity": 61696,
+        "airplay": 61697,
+        "alert-circle": 61698,
+        //...
+    }
+    ```
+3. Generate `${iconSetName}.d.ts` in `src/types/` for each icon set.
+    - Example of Feather.d.ts:
+    ```typescript
+    const FeatherIcons = ["activity","airplay","alert-circle",...]
+    type FeatherIcon = (typeof FeatherIcons)[number]
+    ```
+4. Generate an Icon component in `src/Icon.tsx`.
